@@ -1,0 +1,21 @@
+.board-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; /* Ensures space between left and right sections */
+    align-items: flex-start;       /* Aligns items at the top */
+    gap: 15px;                     /* Adds space between left and right parts */
+}
+
+.left-part {
+    flex: 3; /* Adjust width proportionally */
+}
+
+.right-part {
+    flex: 1; /* Adjust width proportionally */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px; /* Adds space between ranking elements */
+    border-left: 2px solid #ccc; /* Optional: Add a visual divider */
+    padding-left: 20px;
+}

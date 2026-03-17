@@ -1,0 +1,32 @@
+<div class="board-container">
+    <div class="left-part">
+        @if(in){
+
+            <app-score [score]="score"></app-score>
+            <main>
+                <app-grid (scoreChange)="score = $event + score" (handler2)="update($event)"></app-grid>
+            </main>
+
+            @if (!ok) {
+                <h1>{{endinfo}}</h1>
+                <button (click)="tomenu()">menu</button>
+            }
+        }
+        @else{
+            <button (click)="init()">start the game!</button>
+        }
+    </div>
+
+    <div class="right-part">
+        @if(type==0){<h2>Error!!!</h2>}
+        @else{<h1>game of grid{{type}}</h1>}
+        <p> Username:{{username}} </p>
+        @if(ranking){
+            <button (click)="twoface()">show ranking</button>
+        }
+        @else{
+            <button (click)="twoface()">close ranking</button>
+            <app-ranking></app-ranking>
+        }
+    </div>
+</div>

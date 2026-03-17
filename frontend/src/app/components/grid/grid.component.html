@@ -1,0 +1,18 @@
+<div id="grid">
+    @for (line of pattern; track $index; let id_row = $index) {
+        @for (iconId of line; track $index; let id_column = $index) {
+            <div class="grid-cell" (click)="onTry($event)" [attr.data-row]=id_row [attr.data-column]=id_column [attr.data-isBlank]="iconId === 0 ? true : false">
+                <app-tile [iconId] = iconId/>
+            </div>
+        }
+    }
+</div>
+@if(ok){
+    <app-motif (handler1)="update($event)"></app-motif>
+    <div>
+        <button (click)="undo()">Undo</button>
+        <button (click)="redo()">Redo</button>
+    </div>
+}
+
+

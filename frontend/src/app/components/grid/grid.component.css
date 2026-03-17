@@ -1,0 +1,15 @@
+#grid {
+    display:grid;
+    grid-template-columns: repeat(4, min-content);
+
+    border: 1px solid black;
+
+    margin : 15px;
+    width: fit-content;
+
+}
+
+.grid-cell {
+    box-sizing: border-box;
+    border: 1px solid black;
+}

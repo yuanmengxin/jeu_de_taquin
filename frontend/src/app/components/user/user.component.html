@@ -1,0 +1,13 @@
+<div class="card">
+    <h1> Username:{{username}} </h1>
+    <input type="text" [value]="username" (input)="onInputChange($event)"/>
+</div>
+
+  <button *ngIf="(nb$ | async) === 0" (click)="gameservice.init()">Click to upload available grids</button>
+
+  <nav *ngIf="(nb$ | async) as nb">
+    <h2 *ngIf="nb > 0">Choose one of the available grids to start the game</h2>
+    <button *ngIf="nb > 0" (click)="loadBoard1()">{{ gameservice.gridlist[0] }}</button>
+    <button *ngIf="nb > 1" (click)="loadBoard2()">{{ gameservice.gridlist[1] }}</button>
+    <button *ngIf="nb > 2" (click)="loadBoard3()">{{ gameservice.gridlist[2] }}</button>
+  </nav>
